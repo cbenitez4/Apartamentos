@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Constructora</string>
+    <string name="titulo">Registrar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="cedula">Cedula</string>
+    <string name="numero">No</string>
+    <string name="comprar">Comprar</string>
+    <string name="registrar">Registrar</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="lista">Listado de Apartamentos</string>
+    <string name="lista_registrados">Lista Registrados</string>
+    <string name="buscar">Buscar</string>
+    <string name="syb">Sombra y Balcon</string>
+    <string name="mascar">Mas Caro</string>
+    <string name="masgrande">Mas Grande</string>
+    <string name="promedio">Promedio de tamaño por piso</string>
+    <string name="error_vacio">LLene el campo</string>
+    <string name="apartamento">Apartamento</string>
+    <string name="nomenclatura">Nomenclatura</string>
+    <string name="tamaño">Tamaño</string>
+    <string name="precio">Precio</string>
+    <string name="caracteristicas">Caracteristicas</string>
+    <string name="apsombraybalcon">Cuantos apartamentos se encuentran en la sombra y tienen balcon</string>
+    <string name="mascaro">Piso en el cual se encuentre el apartamento mas caro del edificio</string>
+    <string name="masgrandre">Nomenclatura y metros cuadrados del apartamento com mayor tamaño en todo el edificio</string>
+    <string name="prom">Promedio de tamaño de los apartamentos por Piso</string>
+    <string name="balcon">Balcon</string>
+    <string name="sombra">Sombra</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string-array name="opciones">
+        <item>@string/registrar</item>
+        <item>@string/lista_registrados</item>
+        <item>@string/apsombraybalcon</item>
+        <item>@string/mascaro</item>
+        <item>@string/masgrande</item>
+        <item>@string/prom</item>
+    </string-array>
+
+</resources>
