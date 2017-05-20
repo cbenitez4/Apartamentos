@@ -9,19 +9,29 @@ import android.database.sqlite.SQLiteDatabase;
  */
 
 public class Apartamento {
+    private String piso;
     private String apartamento;
     private String tamaño;
     private String precio;
     private String balcon;
     private String sombra;
 
-    public Apartamento(String apartamento, String tamaño, String precio, String balcon, String sombra) {
+    public Apartamento(String piso, String apartamento, String tamaño, String precio, String balcon, String sombra) {
+        this.piso = piso;
         this.apartamento = apartamento;
         this.tamaño = tamaño;
         this.precio = precio;
         this.balcon = balcon;
         this.sombra = sombra;
 
+    }
+
+    public String getPiso() {
+        return piso;
+    }
+
+    public void setPiso(String piso) {
+        this.piso = piso;
     }
 
     public String getApartamento() {
@@ -77,6 +87,7 @@ public class Apartamento {
 
         //insertar
         ContentValues nuevoRegistro = new ContentValues();
+        nuevoRegistro.put("piso",this.getPiso());
         nuevoRegistro.put("apartamento",this.getApartamento());
         nuevoRegistro.put("tamaño",this.getTamaño());
         nuevoRegistro.put("precio",this.getPrecio());

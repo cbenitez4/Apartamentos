@@ -17,7 +17,7 @@ public class Datos {
 
         //Declarar Variables
         SQLiteDatabase db;
-        String sql, apartamento, tamaño, precio, balcon, sombra;
+        String sql, apartamento, piso, tamaño, precio, balcon, sombra;
         Apartamento p;
         //Abrir conexción
         ApartamentoSQLiteOpenHelper aux = new ApartamentoSQLiteOpenHelper(contexto,"DBApartamentos",null,1);
@@ -30,12 +30,13 @@ public class Datos {
         //Recorido del cursor
         if(c.moveToFirst()){
             do{
-                apartamento = c.getString(0);
-                tamaño=c.getString(1);
-                precio=c.getString(2);
-                balcon=c.getString(3);
-                sombra=c.getString(4);
-                p = new Apartamento (apartamento, tamaño, precio, balcon, sombra);
+                piso = c.getString(0);
+                apartamento = c.getString(1);
+                tamaño=c.getString(2);
+                precio=c.getString(3);
+                balcon=c.getString(4);
+                sombra=c.getString(5);
+                p = new Apartamento (piso, apartamento, tamaño, precio, balcon, sombra);
                 apartamentos.add(p);
             } while (c.moveToNext());
         }
@@ -51,7 +52,7 @@ public class Datos {
     public static Apartamento buscarApartamento(Context contexto,String apar){
         //Declarar Variables
         SQLiteDatabase db;
-        String sql, apartamento, tamaño, precio, balcon, sombra;
+        String sql, apartamento, piso, tamaño, precio, balcon, sombra;
         Apartamento p=null;
         //Abrir conexción
         ApartamentoSQLiteOpenHelper aux = new ApartamentoSQLiteOpenHelper(contexto,"DBApartamentos",null,1);
@@ -63,12 +64,13 @@ public class Datos {
 
         //Recorido del cursor
         if(c.moveToFirst()){
-            apartamento = c.getString(0);
-            tamaño=c.getString(1);
-            precio=c.getString(2);
-            balcon=c.getString(3);
-            sombra=c.getString(4);
-            p = new Apartamento (apartamento, tamaño, precio, balcon, sombra);
+            piso = c.getString(0);
+            apartamento = c.getString(1);
+            tamaño=c.getString(2);
+            precio=c.getString(3);
+            balcon=c.getString(4);
+            sombra=c.getString(5);
+            p = new Apartamento (piso, apartamento, tamaño, precio, balcon, sombra);
         }
         //Cierro la base de datos y retorno apartamentos
         db.close();

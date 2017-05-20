@@ -1,21 +1,25 @@
 package com.example.carlos.constructora;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Registrar extends AppCompatActivity {
 
-    private EditText cajaapartamento,cajatamaño,cajaprecio;
+    private EditText cajaapartamento,cajatamaño,cajaprecio,cajapiso;
     private RadioButton balconsi;
     private RadioButton balconno;
     private RadioButton sombrasi;
     private RadioButton sombrano;
+    private Resources res;
     private String[] lis;
     private ArrayAdapter adapterlistado;
     private Intent i;
@@ -26,18 +30,14 @@ public class Registrar extends AppCompatActivity {
         setContentView(R.layout.activity_registrar);
 
         cajaapartamento = (EditText) findViewById(R.id.txtnomenclatura);
+        cajapiso = (EditText) findViewById(R.id.txtpiso);
         cajaprecio = (EditText) findViewById(R.id.txtprecio);
         cajatamaño = (EditText) findViewById(R.id.txttamaño);
         balconsi = (RadioButton) findViewById(R.id.bsi);
         balconno = (RadioButton) findViewById(R.id.bno);
         sombrasi = (RadioButton) findViewById(R.id.ssi);
         sombrano = (RadioButton) findViewById(R.id.sno);
-        cajaapartamento.requestFocus();
-
-        /*lis = this.getResources().getStringArray(R.array.listado);
-        adapterlistado = new ArrayAdapter(this,android.R.layout.simple_list_item_1,lis);
-        combolistado.setAdapter(adapterlistado);
-        */
+        cajapiso.requestFocus();
 
     }
 
@@ -45,6 +45,11 @@ public class Registrar extends AppCompatActivity {
         if(cajatamaño.getText().toString().isEmpty()){
             cajatamaño.setError(this.getResources().getString(R.string.error_vacio));
             cajatamaño.requestFocus();
+            return false;
+
+        }if(cajapiso.getText().toString().isEmpty()){
+            cajapiso.setError(this.getResources().getString(R.string.error_vacio));
+            cajapiso.requestFocus();
             return false;
 
         }
@@ -66,10 +71,13 @@ public class Registrar extends AppCompatActivity {
 
 
     public void registrar(View v) {
-        String apartamento, tamaño, precio, balcon = "", sombra="";
+        String apartamento, piso, tamaño, precio, balcon = "", sombra="";
         Apartamento p;
         if (validar()) {
+            if (validarCantidad()){
+                if (validarApartamento()){
             apartamento = cajaapartamento.getText().toString();
+            piso = cajapiso.getText().toString();
             tamaño = cajatamaño.getText().toString();
             precio = cajaprecio.getText().toString();
 
@@ -81,12 +89,14 @@ public class Registrar extends AppCompatActivity {
             else sombra = getResources().getString(R.string.no);
 
 
-            p = new Apartamento(apartamento, tamaño, precio, balcon, sombra);
+            p = new Apartamento(apartamento, piso, tamaño, precio, balcon, sombra);
             p.registrar(getApplicationContext());
 
-            new AlertDialog.Builder(this).setMessage("Apartamento Guardado Exitosamente!").setCancelable(true).show();
-            limpiar();
-        }
+            Toast t=Toast.makeText(getApplicationContext(),getString(R.string.mensaje1), Toast.LENGTH_SHORT);
+            t.show();
+            i = new Intent(Registrar.this,Principal.class);
+            startActivity(i);
+        }}}
     }
 
     private void limpiar() {
@@ -98,5 +108,32 @@ public class Registrar extends AppCompatActivity {
         balconsi.setChecked(true);
         balconno.setChecked(false);
         cajaapartamento.requestFocus();
+    }
+
+    public boolean validarCantidad(){
+        ArrayList<Apartamento> a=Datos.traerApartamentos(getApplicationContext());
+        String piso=cajapiso.getText().toString();
+        int cont=0;
+        for (int i=0;i<a.size();i++){
+            if (a.get(i).getApartamento().equals(piso))cont=cont+1;
+        }
+        if (cont>=3){
+            Toast.makeText(getApplicationContext(),res.getString(R.string.piso_erroneo),
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean validarApartamento(){
+        ArrayList<Apartamento> apartamentos= Datos.traerApartamentos(getApplicationContext());
+        for (int i=0;i<apartamentos.size();i++){
+            if (apartamentos.get(i).getPiso().equalsIgnoreCase(cajaapartamento.getText().toString())){
+                cajaapartamento.setError(res.getString(R.string.apartamento_igual));
+                cajaapartamento.requestFocus();
+                return false;
+            }
+        }
+        return true;
     }
 }

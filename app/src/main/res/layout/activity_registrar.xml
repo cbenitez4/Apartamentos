@@ -32,6 +32,15 @@
                 android:textStyle="normal|bold" />
 
             <EditText
+                android:id="@+id/txtpiso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/piso"
+                android:inputType="number"
+                android:textStyle="bold" />
+
+            <EditText
                 android:id="@+id/txtnomenclatura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

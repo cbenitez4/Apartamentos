@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Constructora</string>
+    <string name="app_name">Altos Del Algoritmo</string>
+    <string name="mensaje1">Apartamento Guardado Exitosamente!</string>
+    <string name="piso_erroneo">No Pueden Haber Mas De 3 Apartamentos Por Piso</string>
+    <string name="apartamento_igual">Cambie La Nomenclatura</string>
     <string name="titulo">Registrar</string>
     <string name="limpiar">Limpiar</string>
     <string name="cedula">Cedula</string>
@@ -27,14 +30,20 @@
     <string name="prom">Promedio de tamaño de los apartamentos por Piso</string>
     <string name="balcon">Balcon</string>
     <string name="sombra">Sombra</string>
+    <string name="bsi">Tiene Balcon</string>
+    <string name="bno">No Tiene Balcon</string>
+    <string name="ssi">Tiene Sombra</string>
+    <string name="sno">No Tiene Sombra</string>
+    <string name="byssi">Tiene Balcon y Sombra</string>
     <string name="si">Si</string>
     <string name="no">No</string>
+    <string name="piso">Piso</string>
     <string-array name="opciones">
         <item>@string/registrar</item>
         <item>@string/lista_registrados</item>
         <item>@string/apsombraybalcon</item>
         <item>@string/mascaro</item>
-        <item>@string/masgrande</item>
+        <item>@string/masgrandre</item>
         <item>@string/prom</item>
     </string-array>
 

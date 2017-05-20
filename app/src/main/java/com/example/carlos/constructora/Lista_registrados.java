@@ -30,12 +30,15 @@ public class Lista_registrados extends AppCompatActivity {
             TextView c5 = new TextView(this);
             TextView c6 = new TextView(this);
 
+            TextView c7 = new TextView(this);
+
             c1.setText(" "+(i+1));
-            c2.setText(apartamentos.get(i).getApartamento()+"   ");
-            c3.setText(apartamentos.get(i).getTamaño()+"   M2");
-            c4.setText(apartamentos.get(i).getPrecio()+"   " );
-            c5.setText(apartamentos.get(i).getBalcon()+"   ");
-            c6.setText(apartamentos.get(i).getSombra()+"   ");
+            c2.setText(apartamentos.get(i).getPiso()+"  ");
+            c3.setText(apartamentos.get(i).getApartamento()+"  ");
+            c4.setText(apartamentos.get(i).getTamaño()+" M2");
+            c5.setText("$ "+apartamentos.get(i).getPrecio()+".00" );
+            c6.setText(apartamentos.get(i).getBalcon()+"   ");
+            c7.setText(apartamentos.get(i).getSombra()+"   ");
 
 
             fila.addView(c1);
@@ -44,6 +47,7 @@ public class Lista_registrados extends AppCompatActivity {
             fila.addView(c4);
             fila.addView(c5);
             fila.addView(c6);
+            fila.addView(c7);
 
             tabla.addView(fila);
         }
