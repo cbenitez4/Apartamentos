@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Altos Del Algoritmo</string>
     <string name="mensaje1">Apartamento Guardado Exitosamente!</string>
-    <string name="piso_erroneo">No Pueden Haber Mas De 3 Apartamentos Por Piso</string>
+    <string name="piso_error">No Pueden Haber Mas De 3 Apartamentos Por Piso</string>
     <string name="apartamento_igual">Cambie La Nomenclatura</string>
     <string name="titulo">Registrar</string>
     <string name="limpiar">Limpiar</string>

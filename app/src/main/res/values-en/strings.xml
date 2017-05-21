@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Altos Del Algoritmo</string>
+    <string name="apellido">Last Name</string>
+    <string name="apartamento_igual">Change the Nomenclature</string>
+    <string name="cedula">Identification Card</string>
+    <string name="comprar">Buy</string>
+    <string name="buscar">Search</string>
+    <string name="limpiar">Clean</string>
+    <string name="titulo">Registre</string>
+    <string name="tamaño">Size</string>
+    <string name="syb">Shade and balcony</string>
+    <string name="ssi">Has shadow</string>
+    <string name="sombra">Shade</string>
+    <string name="sno">No Shadow</string>
+    <string name="si">Yes</string>
+    <string name="registrar">Registre</string>
+    <string name="promedio">Average size per floor</string>
+    <string name="prom">Average size of apartments per floor</string>
+    <string name="precio">Price</string>
+    <string name="piso_error">No more than 3 apartments per floor</string>
+    <string name="piso">Floor</string>
+    <string name="numero">No</string>
+    <string name="nomenclatura">Nomenclature</string>
+    <string name="nombre">Name</string>
+    <string name="no">No</string>
+    <string name="mensaje1">Apartment Guarded Successfully!</string>
+    <string name="masgrandre">Nomenclature and square meters of the largest apartment in the whole building</string>
+    <string name="masgrande">Most Larger</string>
+    <string name="mascaro">Floor in which is the most expensive apartment in the building</string>
+    <string name="mascar">More Expensive</string>
+    <string name="lista_registrados">List Registered</string>
+    <string name="lista">List of Apartments</string>
+    <string name="error_vacio">Fill out the field</string>
+    <string name="caracteristicas">Characteristics</string>
+    <string name="byssi">Has balcony and shade</string>
+    <string name="bsi">Has Balcony</string>
+    <string name="bno">No Balcony</string>
+    <string name="balcon">Balcony</string>
+    <string name="apsombraybalcon">How many apartments are in the shade and have a balcony</string>
+    <string name="apartamento">Apartment</string>
+</resources>

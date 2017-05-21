@@ -118,8 +118,8 @@ public class Registrar extends AppCompatActivity {
             if (a.get(i).getApartamento().equals(piso))cont=cont+1;
         }
         if (cont>=3){
-            Toast.makeText(getApplicationContext(),res.getString(R.string.piso_erroneo),
-                    Toast.LENGTH_SHORT).show();
+            Toast t=Toast.makeText(getApplicationContext(),getString(R.string.piso_error), Toast.LENGTH_SHORT);
+            t.show();
             return false;
         }
         return true;
@@ -128,12 +128,15 @@ public class Registrar extends AppCompatActivity {
     public boolean validarApartamento(){
         ArrayList<Apartamento> apartamentos= Datos.traerApartamentos(getApplicationContext());
         for (int i=0;i<apartamentos.size();i++){
-            if (apartamentos.get(i).getPiso().equalsIgnoreCase(cajaapartamento.getText().toString())){
-                cajaapartamento.setError(res.getString(R.string.apartamento_igual));
+            if (apartamentos.get(i).getApartamento().equalsIgnoreCase(cajaapartamento.getText().toString())){
+                Toast t=Toast.makeText(getApplicationContext(),getString(R.string.apartamento_igual), Toast.LENGTH_SHORT);
+                t.show();
                 cajaapartamento.requestFocus();
                 return false;
             }
         }
         return true;
     }
+
+
 }
